@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hello HTML</title>
+<!-- rel 屬性表示被link的文檔是?樣式 -->
+<link rel="icon" href="img/stone.ico"  /><!-- https://www.webdesigns.com.tw/webdesign_favicon.asp -->
+<meta charset="UTF-8"><!-- 指定網頁所使用的編碼 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<!-- https://getbootstrap.com/ -->
+<!-- https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp#blog -->
+<style>
+/* Style the body */
+body {
+  /* font-family: Arial; */
+  margin: 0;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+/* Page Content */
+.content {
+    width: 20%;
+    /* padding:20px; */
+    font-family: Arial;
+    font-weight:bold;
+    /* text-align: center; */
+
+}
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: url("img/iceland.jpg");
+  color: black;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height:600px;
+}
+.table  { background-color: rgb(195, 216, 224);margin-bottom:0px;  }
+caption{ text-align: center;background-color:rgb(209, 241, 235);}
+.footer {
+  padding: 0.5%;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 400px;
+  text-align: center;
+}
+
+#Home {background-color: #1abc9c;}
+#News {background-color: green;}
+#Contact {background-color:rgb(92, 92, 204);}
+#About {background-color: rgb(231, 179, 81);}
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="font-size:30px" href="#">KITTY'S GARDAN</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Navbar2</a> -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <!-- tabcontent start -->    
+    <button class="tablink" onclick="openPage('Home', this, '#1abc9c')" >Home</button>
+    <button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
+    <button class="tablink" onclick="openPage('Contact', this, 'rgb(92, 92, 204)')">Contact</button>
+    <button class="tablink" onclick="openPage('About', this, 'rgb(231, 179, 81)')">About</button>
+
+    <div id="Home" class="tabcontent" >
+      <h1 style="font-size:50px">My First Html</h1><br/>
+      <p>Welcome Lailai</p><br/>
+      <button type="button" class="btn btn-outline-light"  onclick="window.open('http://twitter.com/')">click me</button>
+      <!-- <input class="btn btn-primary" type="reset" value="about me"> -->
+    </div>
+
+    <div id="News" class="tabcontent">
+      <h1>News</h1><br/>
+      <p>Some news this fine day!</p> 
+      <img src="img/smile.jpg" style="position: relative;left:15%;top:-61.5%;border-radius: 50%;width:9%;" alt="一張圖片"> <!--  -->
+    </div>
+
+    <div id="Contact" class="tabcontent">
+      <h1>Contact</h1>
+      <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
+
+    <div id="About" class="tabcontent">
+      <h1>About</h1>
+      <p>Who we are and what we do.</p>
+    </div>
+    <!-- tabcontent end -->
+        <!-- <div class="header">
+          <h1 style="font-size:50px">My First Html</h1>
+          <p>Welcome Lailai</p>
+          <input class="btn btn-primary" type="reset" value="about me">
+        </div> -->
+    <!-- <table> -->
+        <table class="table caption-top">
+            <caption>我的興趣</caption><!-- caption表格標題，<tr> 橫列, <td> 直行，<th><th/>頭單元格，原文網址：https://kknews.cc/tech/nmrnn8.html -->
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    <div class="hero-image">
+        <div class="content">
+            <h1 style="width: 20%;">Content</h1>
+            <!-- <div style="width: 5%;">烏龜烏龜好可愛! 烏龜烏龜吃水母!</div> -->
+            <!-- <p>Some content blablabla, some content blablabla.</p>
+            <p>Some content blablabla, some content blablabla.</p>
+            <p>Some content blablabla, some content blablabla.</p>
+            <p>Some content blablabla, some content blablabla.</p>
+            <p>Some content blablabla, some content blablabla.</p>
+            <p>Some content blablabla, some content blablabla.</p>
+            <p>Some content blablabla, some content blablabla.</p>
+            <p>Some content blablabla, some content blablabla.</p>
+            <p>Some content blablabla, some content blablabla.</p> -->
+            <div class="card" style="width: 20%;position: absolute;right:3%;top:5%;">
+                <img src="https://i.imgur.com/3y3LWsU.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Today's mood</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="https://google.com" target="_blank" class="btn btn-outline-danger" style="margin-left:18%;">Go somewhere</a>
+                </div>
+            </div>
+           
+            <!-- email address: https://getbootstrap.com/docs/5.0/forms/floating-labels/ -->
+            <!-- <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="mdo@example.com">
+                    <label for="floatingInputGrid">Email address</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <option selected>Open this select menu</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                    <label for="floatingSelectGrid">Works with selects</label>
+                  </div>
+                </div>
+              </div>
+              <br/> -->
+              <!-- comment -->
+              <!-- <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Comments</label>
+              </div>
+              <button style="position:relative;left: 92%;top:10px" type="button" class="btn-lg btn-dark">Send</button> -->
+        </div>
+        <!-- carousel start-->
+        <div style="margin: auto;width:50%;position:relative" id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner" >
+            <div class="carousel-item active" data-bs-interval="10000">
+              <a href="https://i.imgur.com/T9eEHFA.jpg"><img src="img/turtle.jpeg" class="d-block w-100" alt="..."></a>
+              <div class="carousel-caption d-none d-md-block">
+                <h5></h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="img/diving.jpeg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5></h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/nemo.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5></h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- end -->
+  </div>
+    <div class="footer">
+        <p>Copyright © 2021 Wen. 保留一切權利。 <span><a style="position: relative;color:black;" href="https://github.com/">Visit My Website</a></span></p>
+        <p>turtle is <span style="color: red;">cute</span></p>
+        <!-- <span>行內(inline) 的HTML -->
+    </div>
+    <!-- https://www.bootstrapcdn.com/ -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="undefined" crossorigin="anonymous"></script>
+<script>
+  function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+</body>
+</html>
